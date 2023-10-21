@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakeshop</title>
+<style>
+    .xyz{
+        color: #f6811b;
+        color:#874912;
+        color: #bb6a24;
+        color:#f2dfcf ;
+        color:#231204 ;
+    }
+    body{
+        padding: 0;
+        margin: 0;
+        /* background-color: #f4ccaa; */
+        background-color:#f2dfcf ;
+    }
+    .navbar{
+        background-color:#bb6a24;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        flex-wrap:wrap;
+    }
+    .cakepic{
+        height: 50px;
+    }
+    .navbar-brand-name{
+        font-size: 35px;
+        color: aliceblue;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .navbar-menu{
+        cursor: pointer;
+        font-size: 25px;
+        /* color: #fff; */
+        font-weight: bold;
+        margin-left: 20px;
+        background-color: #f2dfcf ;
+        padding: 5px 20px;
+        border-radius: 20px;
+    }
+    .navbar-menu:hover{
+        background-color: #874912;
+        color: #fff;
+        box-shadow: 0px 0px 5px 3px #fff;
+        padding: 7px 30px;
+        transition: 0.5s;
+    }
+    .navbar-menu-container{
+      margin-left:300px; 
+   }
+   .shop-img{
+    width: 750px;
+    margin-top:130px;
+   }
+   .header-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+   }
+   .header-title{
+    font-family: 'Caveat', cursive;
+    font-size: 45px;
+    color:#874912;
+    font-weight: bold;
+   }
+   .header-description{
+    font-size: 35px;
+    font-family: 'Caveat', cursive;
+    color: #e8740e;
+   }
+   .header-explore-btn{
+    font-size: 25px;
+    font-weight: bold;
+    background-color:#bb6a24;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+   }
+   .header-explore-btn:hover{
+    cursor: pointer;
+    background-color: #874912;
+    color:#f2dfcf;
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px 3px black;
+    padding: 8px 30px;
+   }
+   .our-features-heading{
+    font-size: 50px;
+    color: #f6811b;
+    text-align: center;
+    margin-top: 60px;
+   }
+   .feature-card{
+    width: 350px;
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 15px;
+    background-color: white;
+    position: relative;
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.4);
+   }
+   .ico-feature{
+    font-size: 50px;
+    position: absolute;
+    top: -45px;
+    left: 140px;
+    background-color: white;
+    padding: 10px;
+    border:1px solid #f6811b ;
+    border-radius: 10px;
+    color:#f6811b ;
+    width: 70px;
+    text-align: center;
+   }
+   .feature-title{
+    text-align: center;
+    color: #f6811b;
+    font-size: 30px;
+    padding:5px;
+   }
+   .feature-description{
+    text-align: center;
+    font-size: 20px;
+   }
+   .feature-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-wrap: wrap;
+   }
+   .our-cakes-heading{
+    text-align: center;
+    color: #f6811b;
+    font-size: 50px;
+    margin-top: 50px;
+   }
+   .cake-card{
+    background-color: #fff;
+    width:300px ;
+    padding: 40px 20px;
+    margin: 20px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.2) ;
+    border-radius: 10px;
+   }
+   .cake-card:hover{
+    box-shadow: 0px 0px 10px rgba(0,0,0,1);
+   }
+   .cake-card-img{
+    height: 150px;
+    display: block;
+    margin: 5px auto;
+   filter: drop-shadow(0px 0px 10px #f6811b);
+  }
+  .cake-card-title{
+    font-size: 30px;
+    text-align: center;
+    color:#f6811b ;
+  }
+  .cake-card-price{
+    font-size: 28px;
+    text-align: center;
+    color: #f6811b;
+    /* margin-top:25px; */
+    font-weight: bold;
+  }
+  .order-now-btn{
+    background-color: #f6811b;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    color: #fff;
+  }
+  .order-now-btn:hover{
+    cursor: pointer;
+    background-color: #874912;
+    color:#f2dfcf;
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px 3px black;
+    padding: 8px 30px;
+  }
+  .cakes-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+  .customer-review{
+    text-align: center;
+    font-size: 30px;
+    color: #f6811b;
+  }
+  .cust-img{
+    border-radius: 50%;
+  }
+  .cust-card{
+    background-color: #fff;
+    width: 250px;
+    padding: 40px 20px;
+    margin:20px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+  }
+  .cust-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cust-name{
+    color: #f6811b;
+    text-align: center;
+    font-size: 20px;
+  }
+  .cust-descp{
+    color:black;
+    text-align: center;
+    font-size: 18px;
+ }
+ .cust-pt{
+    background-color: rgb(8, 194, 8);
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 5px;
+ }
+ .customer-review-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+ }
+ .footer{
+    padding: 7px;
+    height: 350px;
+    background-color:#874912;
+    width: 2010px;
+    margin-top: 20px;
+ }
+ .follow-icon{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+ }
+ .footer-details{
+    font-size:25px;
+    text-align: center;
+    font-weight: bold;
+ }
+ .f-s{
+    font-size:30px;
+    font-weight: bold;
+ }
+    @media only screen and (max-width:863px){
+        .navbar-menu-container{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .navbar-menu{
+           flex-direction: column; 
+           margin: 10px;
+           width: 100px;
+           text-align: center;
+        }
+        .navbar-menu{
+            display: block;
+        }
+        .shop-img{
+         width: 400px;
+         margin-top:60px;
+        }
+        .header-title{
+        font-family: 'Caveat', cursive;
+        font-size: 35px;
+        color:#874912;
+        font-weight: bold;
+       }
+       .header-description{
+        font-size: 30px;
+        font-family: 'Caveat', cursive;
+       }
+       .header-explore-btn{
+        font-size: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+       }
+       .feature-card{
+    margin-top: 70px;
+    }
+    .footer{
+    padding: 7px;
+    height: 350px;
+    background-color:#874912;
+    width: 863px;
+    margin-top: 20px;
+ }
+}
+    @media only screen and (min-width:864px)and (max-width:1714px){
+        .navbar-menu-container{
+            margin-left: auto;
+            
+            margin-right: auto;
+            margin-top: 20px;
+        }
+        .feature-card{
+    margin-top: 100px;
+    }
+    .footer{
+    padding: 7px;
+    height: 350px;
+    background-color:#874912;
+    width: 1200px;
+    margin-top: 20px;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="cakepic.png" class="cakepic"/>
+            <span class="navbar-brand-name">Pavan's Cake Studio</span>
+        </div>
+        <div class="navbar-menu-container">
+        <span class="navbar-menu">Home</span>
+        <span class="navbar-menu">About</span>
+        <span class="navbar-menu">Servies</span>
+        <span class="navbar-menu">Contact</span>
+    </div>
+
+    </div>
+    <div class="header-container">
+        <div>
+         <img src="shop-img1.png" class="shop-img">
+        </div>
+        <div>
+        <h1 class="header-title">We bake your dreams....</h1>
+        <p class="header-description">Order your favourite cake now..!<p>
+            <button class="header-explore-btn">Explore Cakes👉</button>
+        </div>
+    </div>
+    <div>
+       <h1 class="our-features-heading">Why Choose Us....??</h1> 
+       
+       <div class="feature-container">
+        <div class="feature-card">
+            <i class="fa-solid fa-fire-burner ico-feature"></i>
+            <h3 class="feature-title">Freshly Baked Cakes</h3>
+            <p class="feature-description">Our cakes are freshly baked and dileverd to you within 4hrs of baking.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-box-open ico-feature"></i>
+            <h3 class="feature-title">Free Delivery</h3>
+            <p class="feature-description">We provide free delivery of cake within 10km of our shop.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-egg ico-feature"></i>
+            <h3 class="feature-title">Eggless Cake</h3>
+            <p class="feature-description">We also provide eggless cakes for our vegetarian customers.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-kitchen-set ico-feature"></i>
+            <h3 class="feature-title">Unique Designs</h3>
+            <p class="feature-description">We provide unique designs for your cake.you can also customize your cake.</p>
+        </div>
+    </div>
+    </div>
+    <h1 class="our-cakes-heading">Our Cakes</h1>
+    <div class="cakes-container">
+        <div class="cake-card">
+            <img src="cake.png" class="cake-card-img"/>
+            <h3 class="cake-card-title">Butterscotch Cake</h3>
+            <p class="cake-card-price">500/-</p>
+            <button class="order-now-btn">Order Now</button>
+        </div>
+        <div class="cake-card">
+            <img src="cake (1).png" class="cake-card-img"/>
+            <h3 class="cake-card-title">Pineapple Cake</h3>
+            <p class="cake-card-price">550/-</p>
+           <button class="order-now-btn">Order Now</button>
+        </div>
+        <div class="cake-card">
+            <img src="cake (2).png" class="cake-card-img"/>
+            <h3 class="cake-card-title">Chocolate Cake</h3>
+            <p class="cake-card-price">400/-</p>
+             <button class="order-now-btn">Order Now</button>
+        </div>
+        <div class="cake-card">
+            <img src="cake (3).png" class="cake-card-img"/>
+            <h3 class="cake-card-title">Strawberry Cake</h3>
+            <p class="cake-card-price">400/-</p>
+            <button class="order-now-btn">Order Now</button>
+        </div>
+        <div class="cake-card">
+            <img src="pastry.png" class="cake-card-img"/>
+            <h3 class="cake-card-title">Pestry</h3>
+            <p class="cake-card-price">150/-</p>
+            <button class="order-now-btn">Order Now</button>
+        </div>
+        <div class="cake-card">
+            <img src="cheesecake.png" class="cake-card-img"/>
+            <h3 class="cake-card-title">Cheese Cake</h3>
+            <p class="cake-card-price">300/-</p>
+            <button class="order-now-btn">Order Now</button>
+        </div>
+        <div class="cake-card">
+            <img src="cupcake.png" class="cake-card-img"/>
+            <h3 class="cake-card-title">Cup Cake</h3>
+            <p class="cake-card-price">50/-</p>
+            <button class="order-now-btn">Order Now</button>
+        </div>
+        <div class="cake-card">
+            <img src="cake (4).png" class="cake-card-img"/>
+            <h3 class="cake-card-title">Dark Chocolate Cake</h3>
+            <p class="cake-card-price">500/-</p>
+            <button class="order-now-btn">Order Now</button>
+        </div>
+        <div class="cake-card">
+            <img src="cake (5).png" class="cake-card-img"/>
+            <h3 class="cake-card-title">Ice-Cake</h3>
+            <p class="cake-card-price">400/-</p>
+            <button class="order-now-btn">Order Now</button>
+        </div>
+    </div>
+         <h2 class="customer-review">⭐Customer Review⭐</h2>
+        <div class="customer-review-container">
+        <div class="cust-card">
+          <img src="https://i.pravatar.cc/150?img=1" class="cust-img">
+          <p class="cust-name">Monika</p>
+          <p class="cust-descp">Cakes are so delicious.Must Order.</p>
+          <span class="cust-pt">4.4</span> <span>⭐⭐⭐⭐</span>
+        </div>
+        <div class="cust-card">
+            <img src="https://i.pravatar.cc/150?img=7" class="cust-img">
+            <p class="cust-name">Rushi</p>
+            <p class="cust-descp">Best Cakes in low price.</p>
+            <span class="cust-pt">4.4</span> <span>⭐⭐⭐⭐⭐</span>
+             </div>
+        <div class="cust-card">
+                <img src="https://i.pravatar.cc/150?img=" class="cust-img">
+                <p class="cust-name">Chandana</p>
+                <p class="cust-descp">Tasty and superb.</p>
+                <span class="cust-pt">4.4</span> <span>⭐⭐⭐⭐</span>
+         </div>
+         <div class="cust-card">
+            <img src="https://i.pravatar.cc/150?img=26" class="cust-img">
+            <p class="cust-name">Prachi</p>
+            <p class="cust-descp">Designs are good as per our requirement.</p>
+            <span class="cust-pt">4.4</span> <span>⭐⭐⭐⭐⭐</span>
+     </div>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <p class="follow-icon">Follow Us On :
+           <span><i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i></span>
+        <div class="footer-details">
+          Contact:9527667529
+          <p>Address:Bakori Phata,near JSPM College,Wagholi-412207.</p>
+          <p>email:pavanchavan13@gmail.com</p>
+           <p class="f-s">😊....Visit our Shop....😊....Thank You....❤️❤️</p>
+        </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://kit.fontawesome.com/35961b61f9.js" crossorigin="anonymous"></script>
+</body>
+</html>
